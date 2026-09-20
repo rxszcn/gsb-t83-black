@@ -1,0 +1,17 @@
+version: 2
+
+formats:
+  - htmlzip
+
+build:
+  os: ubuntu-lts-latest
+  tools:
+    python: "3.13"
+  jobs:
+    install:
+      - pip install --upgrade pip
+      - pip install .[d]
+      - pip install --group docs
+
+sphinx:
+  configuration: docs/conf.py
